@@ -11,4 +11,11 @@ public class UserData {
                 {"1030", "testuser3", "Smith", "Steve", "c@gmail.com", "test@3", "1234567897"}
         };
     }
+
+    @DataProvider(name = "userNames")
+    public static String[] getUserNames(){
+        return new String[]{
+                "testuser1","testuser2","testuser3"
+        };
+    }
 }

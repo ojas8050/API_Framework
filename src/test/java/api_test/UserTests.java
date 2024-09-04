@@ -11,8 +11,9 @@ import org.testng.annotations.Test;
 public class UserTests {
     User userPayload;
     Faker faker;
+
     @BeforeClass
-    public void setupData(){
+    public void setup(){
         faker=new Faker();
         userPayload=new User();
 
@@ -24,6 +25,7 @@ public class UserTests {
         userPayload.setPassword(faker.internet().password(5,10));
         userPayload.setPhone(faker.phoneNumber().phoneNumber());
         userPayload.setUserStatus(faker.number().randomDigitNotZero());
+
     }
 
     @Test(priority = 1)
@@ -31,7 +33,6 @@ public class UserTests {
         Response response = UserEndPoints.createUser(userPayload);
         response.then().log().all();
         Assert.assertEquals(response.getStatusCode(),200);
-
     }
 
     @Test(priority = 2)
@@ -43,7 +44,6 @@ public class UserTests {
 
     @Test(priority = 3)
     public void testUpdateUserByName(){
-
         //update the data using payload
         userPayload.setFirstName(faker.name().firstName());
         userPayload.setLastName(faker.name().lastName());
