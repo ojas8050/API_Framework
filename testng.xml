@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="api_utilities.ExtentReportManager"/>
+    </listeners>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/OjasChopade/OneDrive - ZTSS/Ojas_Repo/PetStoreAutomationFramework/src/test/java/api_test">
+        <classes>
+            <class name="api_test.DDTest">
+                <methods>
+                    <include name="testPostUser"/>
+                    <include name="DeleteUserByName"/>
+                </methods>
+            </class>
+            <class name="api_test.UserDataTest">
+                <methods>
+                    <include name="testPostUserByData"/>
+                    <include name="testDeleteByData"/>
+                </methods>
+            </class>
+            <class name="api_test.UserTests">
+                <methods>
+                    <include name="testPostUser"/>
+                    <include name="testGetUserByName"/>
+                    <include name="testUpdateUserByName"/>
+                    <include name="testDeleteByUsername"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
