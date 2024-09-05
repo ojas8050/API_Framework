@@ -27,6 +27,14 @@
                     <include name="testDeleteByUsername"/>
                 </methods>
             </class>
+            <class name="api_test.UserTestsProp">
+                <methods>
+                    <include name="testPostUser"/>
+                    <include name="testGetUserByName"/>
+                    <include name="testUpdateUserByName"/>
+                    <include name="testDeleteByUsername"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
