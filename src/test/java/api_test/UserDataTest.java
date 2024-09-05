@@ -30,7 +30,6 @@ public class UserDataTest {
     @Test(priority = 2,dataProvider = "userNames",dataProviderClass = UserData.class)
     public void testDeleteByData(String userName)
     {
-        System.out.println(userName);
         Response response = UserEndPoints.deleteUser(userName);
         response.then().log().all();
         Assert.assertEquals(response.getStatusCode(),200);
